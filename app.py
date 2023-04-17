@@ -3,7 +3,7 @@ import pandas as pd
 from flask import Flask, jsonify
 
 # Read in cleaned data
-file = "ReducedCol_Public_Schools_2020-1.csv"
+file = "Public_Schools_2020-2021_Cleaned.csv"
 data = pd.read_csv(file)
 data_json = data.to_json(orient='index')
 

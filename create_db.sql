@@ -1,6 +1,6 @@
 --Create a table schema for the school characteristics CSV files, specifying the data types
 CREATE TABLE schools_chars (
-	NUM INT,
+	NUM INT PRIMARY KEY,
 	SCH_NAME VARCHAR, 
 	LSTREET1 VARCHAR, 
 	LCITY VARCHAR, 

@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <!--<title> Public School Characteristics | Public School Characteristics </title>-->
     <link rel="stylesheet" href="style.css">
-    <!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -21,204 +19,48 @@
   <div class="sidebar">
     <div class="col-md-12 jumbotron text-center">
       <center><b><h1>Public School Characteristics Data for 2020-2021</h1></b></center>
-      <p>Use the interactive charts below to explore the dataset</p>
+      <center><p><h3>Use the interactive charts below to explore the dataset</h3></p></center>
     </div>
-    <div class="logo-details">
-      <i class='bx bxl-c-plus-plus'></i>
-      <span class="logo_name">Public School Characteristics</span>
-    </div>
-      <ul class="nav-links">
-        <li>
-          <a href="#" class="active">
-            <i class='bx bx-grid-alt' ></i>
-            <span class="links_name">Dashboard</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-box' ></i>
-            <span class="links_name">Locations</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-list-ul' ></i>
-            <span class="links_name">School Type</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-pie-chart-alt-2' ></i>
-            <span class="links_name">Student/ Teacher Ratio</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-coin-stack' ></i>
-            <span class="links_name">School Level</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-book-alt' ></i>
-            <span class="links_name">Total # of students</span>
-          </a>
-        </li>
-
-        </li>
-        <li class="log_out">
-          <a href="#">
-            <i class='bx bx-log-out'></i>
-            <span class="links_name">Log out</span>
-          </a>
-        </li>
-      </ul>
   </div>
-  <section class="home-section">
-    <nav>
-      <div class="sidebar-button">
-        <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Dashboard</span>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="well">
+        <h5>State Name:</h5>
+        <select id="selDataset" onchange="optionChanged(this.value)"></select>
       </div>
-      <div class="search-box">
-        <input type="text" placeholder="Search...">
-        <i class='bx bx-search' ></i>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">School Info</h3>
+        </div>
+        <div id="sample-metadata" class="panel-body"></div>
       </div>
-      <div class="profile-details">
-        <!--<img src="images/profile.jpg" alt="">-->
-        <span class="admin_name"> School locations</span>
-        <i class='bx bx-chevron-down' ></i>
-      </div>
-    </nav>
+    </div>
+    <div class="col-md-5">
+      <div id="map"></div>
+    </div>
+    <div class="col-md-5">
+      <div id="bar1"></div>
+    </div>
+    <div class="col-md-5">
+      <div id="pie"></div>
+    </div>
+    <div class="col-md-5">
+      <div id="bar2"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="bubble"></div>
+    </div>
+  </div>
+</div>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./static/js/plots.js"></script>
 
-    <div class="home-content">
-      <div class="overview-boxes">
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic">Most Popular Location</div>
-            <div class="number"> ""</div>
-            <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text"> need to insert a comparrison</span>
-            </div>
-          </div>
-          <i class='bx bx-cart-alt cart'></i>
-        </div>
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic"> School Type </div>
-            <div class="number">""</div>
-            <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">School Type Stat</span>
-            </div>
-          </div>
-          <i class='bx bxs-cart-add cart two' ></i>
-        </div>
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic"> Student Teacher Ratio</div>
-            <div class="number">Insert Ratio</div>
-            <div class="indicator">
-              <i class='bx bx-up-arrow-alt'></i>
-              <span class="text">Maybe another comparrison stat</span>
-            </div>
-          </div>
-          <i class='bx bx-cart cart three' ></i>
-        </div>
-        <div class="box">
-          <div class="right-side">
-            <div class="box-topic">School Level</div>
-            <div class="number">School Level Stat</div>
-            <div class="indicator">
-              <i class='bx bx-down-arrow-alt down'></i>
-              <span class="text"> School level comparrison</span>
-            </div>
-          </div>
-          <i class='bx bxs-cart-download cart four' ></i>
-        </div>
-      </div>
 
-      <div class="Public School Characteristics">
-        <div class="recent-School Characteristics box">
-          <div class="title">Insert Tittle</div>
-          <div class="School Characteristics-details">
-            <ul class="details">
-              <li class="topic">Insert</li>
-              <li><a href="#">Need to input</a></li>
-              <li><a href="#">Need to input</a></li>
-              <li><a href="#">Need to input</a></li>
-              <li><a href="#">Need to input</a></li>
-              <li><a href="#">Need to input</a></li>
-              <li><a href="#">Need to input</a></li>
-              <li><a href="#">Need to input</a></li>
-            </ul>
-            <ul class="details">
-            <li class="topic">Locations</li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-             <li><a href="#">Need to input</a></li>
-          </ul>
-          <ul class="details">
-            <li class="topic">School Type</li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-             <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-          </ul>
-          <ul class="details">
-            <li class="topic">Student Teacher Ratio</li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-            <li><a href="#">Need to input</a></li>
-             <li><a href="#">Need to input</a></li>
-             <li><a href="#">Need to input</a></li>
-          </ul>
-          </div>
-          <div class="button">
-            <a href="#">See All</a>
-          </div>
-        </div>
-        <div class="Public-School-Characteristics">
-          <div class="title">Best Places to Send your child</div>
-          <ul class="top-piblic school-details">
-            <li>
-            <a href="#">
-             
-  </section>
-
-  <script>
-   let sidebar = document.querySelector(".sidebar");
-let sidebarBtn = document.querySelector(".sidebarBtn");
-sidebarBtn.onclick = function() {
-  sidebar.classList.toggle("active");
-  if(sidebar.classList.contains("active")){
-  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
-}else
-  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-}
- </script>
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src=""https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="./static/js/plots.js"></script>
 </body>
+
 </html>
-
-
-
+   

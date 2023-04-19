@@ -6,7 +6,7 @@ from flask import Flask, jsonify, render_template
 from config import pg_user_name, pg_password
 
 # Database Setup
-engine = create_engine(f"postgresql://{pg_user_name}:{pg_password}@localhost:5433/create_db")
+engine = create_engine(f"postgresql://{pg_user_name}:{pg_password}@localhost:5432/public_school_db")
 conn = engine.connect()
 
 # Flask Setup

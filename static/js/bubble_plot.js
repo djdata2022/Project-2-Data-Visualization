@@ -12,30 +12,30 @@ function init() {
   
     // Use the list of sample names to populate the select options
     d3.json("samples.json").then((data) => {
-      var sampleNames = LSTATE;
+      var sampleNames = lstate;
   
-      sampleNames.forEach((sample) => {
-        selector
-          .append("option")
-          .text(sample)
-          .property("value", sample);
-      });
+      // sampleNames.forEach((sample) => {
+      //   selector
+      //     .append("option")
+      //     .text(sample)
+      //     .property("value", sample);
+      // });
   
       // Use the first sample from the list to build the initial plots
-      var firstSample = sampleNames[0];
-      buildCharts(firstSample);
-      buildMetadata(firstSample);
+      var firstState = stateNames[0];
+      buildCharts(firstState);
+      buildMetadata(firstState);
     });
   }
   
-  // Initialize the dashboard
-  init();
-  function optionChanged(newSample) {
-    // Fetch new data each time a new sample is selected
-    buildMetadata(newSample);
-    buildCharts(newSample);
+  // // Initialize the dashboard
+  // init();
+  // function optionChanged(newSample) {
+  //   // Fetch new data each time a new sample is selected
+  //   buildMetadata(newSample);
+  //   buildCharts(newSample);
     
-  }
+  // }
 
 //   // Demographics Panel 
 // function buildMetadata(sample) {

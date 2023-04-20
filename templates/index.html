@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <!--<title> Public School Characteristics | Public School Characteristics </title>-->
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="/static/css/css.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -27,51 +27,15 @@
       <div class="well">
         <h5>State Name:</h5>
         <select id="selDataset" onchange="optionChanged(this.value)">
-          <option value="AL">Alabama</option>
-          <option value="AZ">Arizona</option>
-          <option value="AR">Arkansas</option>
-          <option value="CA">California</option>
-          <option value="CO">Colorado</option>
-          <option value="CT">Connecticut</option>
-          <option value="FL">Florida</option>
-          <option value="GA">Georgia</option>
-          <option value="HI">Hawaii</option>
-          <option value="ID">Idaho</option>
-          <option value="OR">Oregon</option>
-          <option value="IN">Indiana</option>
-          <option value="IA">Iowa</option>
-          <option value="KS">Kansas</option>
-          <option value="KY">Kentuckey</option>
-          <option value="LA">Louisiana</option>
-          <option value="ME">Maine</option>
-          <option value="MD">Maryland</option>
-          <option value="MI">Michigan</option>
-          <option value="MN">Minnesota</option>
-          <option value="MS">Mississippi</option>
-          <option value="MO">Montana</option>
-          <option value="NE">Nebraska</option>
-          <option value="NV">Nevada</option>
-          <option value="NH">New Hampshire</option>
-          <option value="NJ">New Jersey</option>
-          <option value="NM">New Mexico</option>
-          <option value="NY">New York</option>
-          <option value="NC">North Carolina</option>
-          <option value="ND">North Dakota</option>
-          <option value="MT">Montana</option>
-          <option value="OK">Oklahoma</option>
-          <option value="PA">Pennsylvania</option>
-          <option value="RI">Rhode Island</option>
-          <option value="SC">South Carolina</option>
-          <option value="SD">South Dakota</option>
-          <option value="TX">Texas</option>
-          <option value="VT">Vermont</option>
-          <option value="WA">Washington</option>
-          <option value="WV">West Virginia</option>
-          <option value="WI">Wisconsin</option>
-          <option value="WY">Wyoming</option>
-          <option value="GU">Guam</option>
-          <option value="PR">Puerto Rico</option>
-          <option value="VI">Virgin Islands</option>
+          <option value="CL">City: Large</option>
+          <option value="CL">City: Small</option>
+          <option value="CL">Suburb: Large</option>
+          <option value="CL">Suburb: Mid-size</option>
+          <option value="CL">Suburb: Small</option>
+          <option value="CL">Town: Fringe</option>
+          <option value="CL">Town: Distant</option>
+          <option value="CL">Rural: Fringe</option>
+          <option value="CL">Rural: Distant</option>
         </select>
       </div>
       <div class="panel panel-primary">
@@ -104,7 +68,6 @@
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./static/js/plots.js"></script>
-<script src="./static/js/bubble_plot.js"></script>
 <script src="/static/js/map_js.js"></script>
 </body>
 

@@ -35,7 +35,7 @@ function createMap(schools) {
   // Create the map object with options.
   var map = L.map("bubble", {
     center: [38.83487, -76.31982],
-    zoom: 7,
+    zoom: 6,
     layers: [streetmap, schools]
   });
 
@@ -59,7 +59,9 @@ function createMarkers(response) {
 
     // For each station, create a marker, and bind a popup with the station's name.
     var schoolMarker = L.marker([High_school.latcod, High_school.loncod])
-      .bindPopup("<h3>" + High_school.sch_name + "<h3><h3>Address: " + High_school.lstreet1 + "</h3><h2> Total Number of enroled students:" + High_school.total +"</h2>");
+      .bindPopup("<h3>" + High_school.sch_name + "<h3><h3>Address: " + 
+        High_school.lstreet1 + "," + High_school.lcity + 
+        "</h3><p> Total enroled students: " + High_school.total + "</p>");
 
     // Add the marker to the bikeMarkers array.
     schoolMarkers.push(schoolMarker);

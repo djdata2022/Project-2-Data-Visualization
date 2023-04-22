@@ -1,42 +1,75 @@
-let myMap = L.map("bubble", {
-  center: [39.828175, -98.5795],
-  zoom: 7
-});
-// Adding the tile layer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(myMap);
+// let myMap = L.map("bubble", {
+//   center: [39.828175, -98.5795],
+//   zoom: 7
+// });
+// // Adding the tile layer
+// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+// }).addTo(myMap);
 
 
+// json.forEach((item) => {
+//   console.log('latatude: ' + item.latcod);
+//   console.log('lonatude: ' + item.loncod);
+// });
 
+
+function createMap(schools) {
+
+  // Create the tile layer that will be the background of our map.
+  var streetmap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  });
+
+
+  // Create a baseMaps object to hold the streetmap layer.
+  var baseMaps = {
+    "Street Map": streetmap
+  };
+
+  // Create an overlayMaps object to hold the bikeStations layer.
+  var overlayMaps = {
+    "School_Locals": schools
+  };
+
+  // Create the map object with options.
+  var map = L.map("bubble", {
+    center: [38.83487, -76.31982],
+    zoom: 7,
+    layers: [streetmap, schools]
+  });
+
+  // Create a layer control, and pass it baseMaps and overlayMaps. Add the layer control to the map.
+  L.control.layers(baseMaps, overlayMaps, {
+    collapsed: false
+  }).addTo(map);
+}
 
 function createMarkers(response) {
 
-  // Pull the "stations" property from response.data.
-  var schools_data = response.data.stations;
+  // Pull the "school" property from response.data.
+  var stations = response;
 
   // Initialize an array to hold bike markers.
-  var school_lat = [];
-  var school_lon =[];
+  var schoolMarkers = [];
 
   // Loop through the stations array.
-  for (var index = 0; index < stations.length; index++) {
-    var station = stations[index];
+  for (var index = 0; index < response.length; index++) {
+    var High_school = response[index];
 
     // For each station, create a marker, and bind a popup with the station's name.
-    var bikeMarker = L.marker([station.lat, station.lon])
-      .bindPopup("<h3>" + station.name + "<h3><h3>Capacity: " + station.capacity + "</h3>");
+    var schoolMarker = L.marker([High_school.latcod, High_school.loncod])
+      .bindPopup("<h3>" + High_school.sch_name + "<h3><h3>Address: " + High_school.lstreet1 + "</h3><h2> Total Number of enroled students:" + High_school.total +"</h2>");
 
     // Add the marker to the bikeMarkers array.
-    bikeMarkers.push(bikeMarker);
+    schoolMarkers.push(schoolMarker);
   }
 
+  // Create a layer group that's made from the bike markers array, and pass it to the createMap function.
+  createMap(L.layerGroup(schoolMarkers));
 }
 
 
-// Perform an API call to get the information. Call createMarkers when it completes.
+// Perform an API call to the Citi Bike API to get the station information. Call createMarkers when it completes.
 d3.json("http://127.0.0.1:5000/api").then(createMarkers);
 
-
-
-;

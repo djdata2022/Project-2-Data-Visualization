@@ -34,15 +34,9 @@ function createMarkers(response) {
 }
 
 
-// Perform an API call to the Citi Bike API to get the station information. Call createMarkers when it completes.
+// Perform an API call to get the information. Call createMarkers when it completes.
 d3.json("http://127.0.0.1:5000/api").then(createMarkers);
 
 
 
-// const link = "https://data-nces.opendata.arcgis.com/datasets/nces::public-school-characteristics-2020-21.geojson?outSR=%7B%22latestWkid%22%3A4326%2C%22wkid%22%3A4326%7D";
-
-// // Getting our GeoJSON data
-// d3.json(link).then(function(data) {
-//   // Creating a GeoJSON layer with the retrieved data
-//   L.geoJson(data).addTo(myMap);
-// });
+;

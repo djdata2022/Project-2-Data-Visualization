@@ -6,7 +6,7 @@ from flask import Flask, jsonify, render_template
 from config import pg_user_name, pg_password
 
 # Database Setup
-engine = create_engine(f"postgresql://{pg_user_name}:{pg_password}@localhost:5433/Maryland_school")
+engine = create_engine(f"postgresql://{pg_user_name}:{pg_password}@localhost:5432/public_school_db")
 conn = engine.connect()
 
 # Flask Setup
@@ -18,7 +18,7 @@ def index_page():
 
 @app.route("/api")
 def data():
-    df = pd.read_sql("SELECT * FROM schools_charts",conn)
+    df = pd.read_sql("SELECT * FROM schools_chars",conn)
     df_json = df.to_dict(orient="records")
     return jsonify(df_json)
 

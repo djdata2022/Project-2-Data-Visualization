@@ -4,7 +4,6 @@
   <head>
     <meta charset="UTF-8">
     <title>Public School Characteristics | Public School Characteristics </title>
-    <!-- <link rel="stylesheet" href="/static/css/css.css"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
@@ -23,31 +22,25 @@
       <h3>Welcome to the State of Maryland's high school viewer! Using this interactive tool, you can view information about high schools across the state. Use the drop down menu below to select the type of high school you are looking for.</h3>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-2">
-      <div class="well">
-        Select the type of location:<br>
-        <select id="selDataset" onchange="optionChanged(this.value)">
-          <option value="CL">City: Large</option>
-          <option value="CS">City: Small</option>
-          <option value="SL">Suburb: Large</option>
-          <option value="SM">Suburb: Mid-size</option>
-          <option value="SS">Suburb: Small</option>
-          <option value="TF">Town: Fringe</option>
-          <option value="TD">Town: Distant</option>
-          <option value="RF">Rural: Fringe</option>
-          <option value="RD">Rural: Distant</option>
-        </select>
-      </div>
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">School Info</h3>
-        </div>
-        <div id="sample-metadata" class="panel-body"></div>
-      </div>
+  <div class="top-display">
+    <div class="map-display">
+      <div id="bubble" style="position: relative; height: 350px; width: 400px"></div>
     </div>
-    <div class="col-md-5">
-      <div id="map"></div>
+  <br><br><br>
+    <div class="dropdown-bar">
+      Select the type of location:<br>
+      <select id="selDataset" onchange="optionChanged(this.value)">
+        <option value="CL">City: Large</option>
+        <option value="CS">City: Small</option>
+        <option value="SL">Suburb: Large</option>
+        <option value="SM">Suburb: Mid-size</option>
+        <option value="SS">Suburb: Small</option>
+        <option value="TF">Town: Fringe</option>
+        <option value="TD">Town: Distant</option>
+        <option value="RF">Rural: Fringe</option>
+        <option value="RD">Rural: Distant</option>
+      </select>
+      <div id="jonathan"></div>
     </div>
     <div class="col-md-5">
       <div id="bar1"></div>
@@ -61,18 +54,13 @@
     <div class="col-md-5">
       <div id="bar3"></div>
     </div>  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div id="bubble" style="position: relative; height: 350px; width: 400px"></div>
-    </div>
-  </div>
 </div>
 <script src="https://d3js.org/d3.v5.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="../static/js/app2.js"></script>
-<script src="../static/js/bar.js"></script>
-<script src="../static/js/jonathan.js"></script>
+<script src="/static/js/app2.js"></script>
+<script src="/static/js/bar.js"></script>
+<script src="/static/js/jonathan.js"></script>
 <script src="/static/js/map_1.js"></script>
 </body>
 

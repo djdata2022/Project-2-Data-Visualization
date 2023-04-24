@@ -8,6 +8,22 @@ console.log(data)
         let city = data.map((row)=>row.lcity);
         let locale = data.map((row)=>row.ulocale);
 
+        // Pie chart without hard-coded values
+        var localeInfo = [{
+                values: locale.length,
+                labels: locale,
+                textinfo: "value+percent",
+                type: 'pie'
+        }];
+        
+        var layout = {
+                title: 'Number of High Schools in Each Locale',
+                height: 400,
+                width: 500
+        };
+      
+        Plotly.newPlot('pie', localeInfo, layout);
+        
 
         // Test pie chart with values hard coded - works
         // var localeInfo = [{
@@ -25,21 +41,6 @@ console.log(data)
         
         // Plotly.newPlot('bar2', localeInfo, layout);
 
-      // Pie chart without hard-coded values
-        var localeInfo = [{
-                values: locale.length,
-                labels: locale,
-                textinfo: "value+percent",
-                type: 'pie'
-        }];
-        
-        var layout = {
-                title: 'Number of High Schools in Each Locale',
-                height: 400,
-                width: 500
-        };
-      
-        Plotly.newPlot('pie', localeInfo, layout);
-        
+
 
 });

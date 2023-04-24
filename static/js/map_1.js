@@ -45,7 +45,7 @@ function createMap(schools) {
       var schoolMarker = L.marker([High_school.latcod, High_school.loncod])
         .bindPopup("<h2>" + High_school.sch_name + "<h2><h3>Address: " + 
           High_school.lstreet1 + ", " + High_school.lcity + 
-          "</h3><p> Total enroled students: " + High_school.total + "</p>");
+          "</h3><p> Total enroled students: " + High_school.total + "</p> <p> Student Student Ratio: " + High_school.stuteratio + "</p>");
   
       // Add the marker to the school marker array.
       schoolMarkers.push(schoolMarker);

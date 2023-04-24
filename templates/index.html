@@ -15,20 +15,28 @@
     crossorigin=""></script>
    </head>
 <body>
+  <!-- Page heading CSS -->
   <div class="sidebar">
     <div class="col-md-12 jumbotron text-center">
       <center><b><h1>Maryland Public High School Characteristics</h1></b></center>
       <center><b><h2>Based on Data from 2021 - 2022</h2></b></center>
-      <h3>Welcome to the State of Maryland's high school viewer! Using this interactive tool, you can view information about high schools across the state. Use the drop down menu below to select the type of high school you are looking for.</h3>
+      <h3>Welcome to the State of Maryland's high school viewer! Using this interactive tool, you can view information about high schools across the state.</h3>
+      <p>(1) Zoom in on the interative map and hover over the markers to view information about each school.<br>
+      (2) Use the drop down menu to select the high school locale to view summary information for that locale.</p>
     </div>
   </div>
+  <!-- Interactive map -->
   <div class="top-display">
     <div class="map-display">
-      <div id="bubble" style="position: relative; height: 350px; width: 400px"></div>
+      <div id="bubble" style="position: relative; height: 350px; width: 800px"></div>
     </div>
-  <br><br><br>
+    <!-- Pie chart -->
+    <div class="col-md-5">
+      <div id="pie"></div>
+    </div>
+  <br>
     <div class="dropdown-bar">
-      Select the type of location:<br>
+      <h4>Select the locale (city, suburb, etc.) from the drop down menu below to view high school information by locale:</h4>
       <select id="selDataset" onchange="optionChanged(this.value)">
         <option value="CL">City: Large</option>
         <option value="CS">City: Small</option>
@@ -45,9 +53,7 @@
     <div class="col-md-5">
       <div id="bar1"></div>
     </div>
-    <div class="col-md-5">
-      <div id="pie"></div>
-    </div>
+
     <div class="col-md-5">
       <div id="bar2"></div>
     </div>

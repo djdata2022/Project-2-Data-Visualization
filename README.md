@@ -1,6 +1,8 @@
 # Project-3-Data-Visualization
 Group Project - April 2023
 
+Team members: Beth Wilde, Desiree Joseph, Jonathan/Yonatan Gorin, Vikas Agrawal
+
 A Brief articulation of chosen topic and rationale:
 
 Our topic is in the field of education. We looked at characteristics of public schools in the state of Maryland and created a dashboard to serve as a resource for families moving to or within the state. The product is meant to allow users to easily visualize the locations and size of schools. Using data from the Department of Education, we looked at factors such as school locale (city, suburb, etc.), school city, student to teacher ratio and total students. The data is from the period 2020 to 2021.

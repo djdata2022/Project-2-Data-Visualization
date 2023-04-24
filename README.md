@@ -1,6 +1,11 @@
 # Project-3-Data-Visualization
 Group Project - April 2023
 
+A Brief articulation of chosen topic and rationale:
+
+Our topic is in the field of education. We will look at characteristics of public schools in the state of Marylan and create a dashboard to serve as a resource for families moving to or within the state. The product will allow users to easily visualize the locations and size of/in schools. Using data from the Department of 
+Education, we will look at factors such as student to teacher ratio, total students and school locale. The data is from 2020-2021.
+
 Link to data: https://catalog.data.gov/dataset/public-school-characteristics-2020-21
 
 GeoJSON data link: https://data-nces.opendata.arcgis.com/datasets/nces::public-school-characteristics-2020-21.geojson?outSR=%7B%22latestWkid%22%3A4326%2C%22wkid%22%3A4326%7D

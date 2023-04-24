@@ -15,7 +15,7 @@ Updated 4/17
   + Pie charts - to do (DJ)
   
  + Leaflet Map element:  map_1.js 
-  +Completed by b-wilde on 4/22 with minor additions on 4/23.
+  + Completed by b-wilde on 4/22 with minor additions on 4/23.
    + Base layer of openstreetmap.
-   +Overlay Map of all Public High Schools in Maryland
-   +Binded Popup with school's name, address, total number of enroled students and student/teacher ratio
+   + Overlay Map of all Public High Schools in Maryland
+   + Binded Popup with school's name, address, total number of enroled students and student/teacher ratio

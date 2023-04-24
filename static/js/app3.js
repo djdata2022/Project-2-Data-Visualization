@@ -56,11 +56,10 @@ d3.json(url).then(function(data) {
     };
     let RD = data.filter(selectRuralDistant);
 
-    // Call updatePlotly() when a change is made at dropdown menu
+    //Call updatePlotly() when a change is made at dropdown menu
     d3.select("#selDataset").on("change", updatePlotly);
 
     function init() {
-
         // Plotting second chart that responds to user input from drop down
         let chartData = CL;
         // Sort CL by stuteratio ascending.
@@ -80,7 +79,7 @@ d3.json(url).then(function(data) {
         let traceData = [traceX];
 
         let layoutData = {
-            title: "High Schools with Lowest Student/Teacher Ratios",
+            title: "High Schools in Selected Locale with Lowest Student/Teacher Ratios",
             width: 600,
             height: 400,
             margin: {
@@ -91,7 +90,7 @@ d3.json(url).then(function(data) {
             }
             }
         
-        Plotly.newPlot("bar1", traceData, layoutData);
+        Plotly.newPlot("bar2", traceData, layoutData);
         
     };
 
@@ -101,9 +100,9 @@ d3.json(url).then(function(data) {
         let dropdownMenu = d3.select("#selDataset");
         let locale = dropdownMenu.property("value");
 
-        let x = [];
-        let y = [];
-        let text = [];
+        let x2 = [];
+        let y2 = [];
+        let text2 = [];
 
         if (locale === "CL") {
          chartData = CL;
@@ -113,9 +112,9 @@ d3.json(url).then(function(data) {
             let slicedData = sortedData.slice(0,10);
             slicedData.reverse();
 
-            x = slicedData.map(school => school.stuteratio);
-            y = slicedData.map(school => school.sch_name);
-            text = slicedData.map(school => school.sch_name);
+            x2 = slicedData.map(school => school.stuteratio);
+            y2 = slicedData.map(school => school.sch_name);
+            text2 = slicedData.map(school => school.sch_name);
         }
 
         else if (locale === "CS") {
@@ -126,9 +125,9 @@ d3.json(url).then(function(data) {
             let slicedData = sortedData.slice(0,10);
             slicedData.reverse();
 
-            x = slicedData.map(school => school.stuteratio);
-            y = slicedData.map(school => school.sch_name);
-            text = slicedData.map(school => school.sch_name);
+            x2 = slicedData.map(school => school.stuteratio);
+            y2 = slicedData.map(school => school.sch_name);
+            text2 = slicedData.map(school => school.sch_name);
         }
 
         else if (locale === "SL") {
@@ -139,9 +138,9 @@ d3.json(url).then(function(data) {
             let slicedData = sortedData.slice(0,10);
             slicedData.reverse();
 
-            x = slicedData.map(school => school.stuteratio);
-            y = slicedData.map(school => school.sch_name);
-            text = slicedData.map(school => school.sch_name);
+            x2 = slicedData.map(school => school.stuteratio);
+            y2 = slicedData.map(school => school.sch_name);
+            text2 = slicedData.map(school => school.sch_name);
         }
 
         else if (locale === "SM") {
@@ -152,9 +151,9 @@ d3.json(url).then(function(data) {
             let slicedData = sortedData.slice(0,10);
             slicedData.reverse();
 
-            x = slicedData.map(school => school.stuteratio);
-            y = slicedData.map(school => school.sch_name);
-            text = slicedData.map(school => school.sch_name);            
+            x2 = slicedData.map(school => school.stuteratio);
+            y2 = slicedData.map(school => school.sch_name);
+            text2 = slicedData.map(school => school.sch_name);            
         }
         
         else if (locale === "SS") {
@@ -165,9 +164,9 @@ d3.json(url).then(function(data) {
             let slicedData = sortedData.slice(0,10);
             slicedData.reverse();
 
-            x = slicedData.map(school => school.stuteratio);
-            y = slicedData.map(school => school.sch_name);
-            text = slicedData.map(school => school.sch_name);
+            x2 = slicedData.map(school => school.stuteratio);
+            y2 = slicedData.map(school => school.sch_name);
+            text2 = slicedData.map(school => school.sch_name);
         }
 
         else if (locale === "TF") {
@@ -178,9 +177,9 @@ d3.json(url).then(function(data) {
             let slicedData = sortedData.slice(0,10);
             slicedData.reverse();
 
-            x = slicedData.map(school => school.stuteratio);
-            y = slicedData.map(school => school.sch_name);
-            text = slicedData.map(school => school.sch_name);            
+            x2 = slicedData.map(school => school.stuteratio);
+            y2 = slicedData.map(school => school.sch_name);
+            text2 = slicedData.map(school => school.sch_name);            
         }
 
         else if (locale === "TD") {
@@ -191,9 +190,9 @@ d3.json(url).then(function(data) {
             let slicedData = sortedData.slice(0,10);
             slicedData.reverse();
 
-            x = slicedData.map(school => school.stuteratio);
-            y = slicedData.map(school => school.sch_name);
-            text = slicedData.map(school => school.sch_name);
+            x2 = slicedData.map(school => school.stuteratio);
+            y2 = slicedData.map(school => school.sch_name);
+            text2 = slicedData.map(school => school.sch_name);
         }
 
         else if (locale === "RF") {
@@ -204,9 +203,9 @@ d3.json(url).then(function(data) {
             let slicedData = sortedData.slice(0,10);
             slicedData.reverse();
 
-            x = slicedData.map(school => school.stuteratio);
-            y = slicedData.map(school => school.sch_name);
-            text = slicedData.map(school => school.sch_name);            
+            x2 = slicedData.map(school => school.stuteratio);
+            y2 = slicedData.map(school => school.sch_name);
+            text2 = slicedData.map(school => school.sch_name);            
         }
 
         else if (locale === "TD") {
@@ -217,15 +216,15 @@ d3.json(url).then(function(data) {
             let slicedData = sortedData.slice(0,10);
             slicedData.reverse();
 
-            x = slicedData.map(school => school.stuteratio);
-            y = slicedData.map(school => school.sch_name);
-            text = slicedData.map(school => school.sch_name); 
+            x2 = slicedData.map(school => school.stuteratio);
+            y2 = slicedData.map(school => school.sch_name);
+            text2 = slicedData.map(school => school.sch_name); 
         }
 
         // Restyle the Plotly chart
-        Plotly.restyle("bar1", "x", [x]);
-        Plotly.restyle("bar1", "y", [y]);
-        Plotly.restyle("bar1", "text", [text]);
+        Plotly.restyle("bar2", "x", [x2]);
+        Plotly.restyle("bar2", "y", [y2]);
+        Plotly.restyle("bar2", "text", [text2]);
     };
 
     init();

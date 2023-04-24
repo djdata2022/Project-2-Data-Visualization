@@ -78,7 +78,7 @@ d3.json(url).then(function(data) {
         let traceLocale = [trace1];
 
         let layout = {
-            title: "High Schools with Lowest Numbers of Students",
+            title: "High Schools in Selected Locale with Lowest Numbers of Students",
             width: 600,
             height: 400,
             margin: {

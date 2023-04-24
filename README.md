@@ -3,12 +3,8 @@ Group Project - April 2023
 
 A Brief articulation of chosen topic and rationale:
 
-Our topic is in the field of education. We will look at characteristics of public schools in the 
-United States and create a dashboard to serve as a resource for families moving to or 
-within the US. The product will allow users to easily visualize the locations, types, and 
-staffing levels of/in schools across the country. Using data from the Department of 
-Education, we will look at factors such as school type, student to teacher ratio, school level, 
-total students and school locale. The data is from 2020-2021.
+Our topic is in the field of education. We will look at characteristics of public schools in the state of Marylan and create a dashboard to serve as a resource for families moving to or within the state. The product will allow users to easily visualize the locations and size of/in schools. Using data from the Department of 
+Education, we will look at factors such as student to teacher ratio, total students and school locale. The data is from 2020-2021.
 
 Link to data: https://catalog.data.gov/dataset/public-school-characteristics-2020-21
 

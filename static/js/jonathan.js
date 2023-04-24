@@ -207,8 +207,8 @@ d3.json(url).then(function(data) {
             text = slicedLocale.map(school => school.sch_name);            
         }
 
-        else if (locale === "TD") {
-            localeData = TD;
+        else if (locale === "RD") {
+            localeData = RD;
             // Sort TD by total students ascending.
             let sortedLocale = localeData.sort((a, b) => a.total - b.total);
             // Slice the first 10 objects for plotting

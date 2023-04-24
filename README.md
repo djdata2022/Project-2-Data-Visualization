@@ -3,24 +3,24 @@ Group Project - April 2023
 
 A Brief articulation of chosen topic and rationale:
 
-Our topic is in the field of education. We will look at characteristics of public schools in the state of Marylan and create a dashboard to serve as a resource for families moving to or within the state. The product will allow users to easily visualize the locations and size of/in schools. Using data from the Department of 
-Education, we will look at factors such as student to teacher ratio, total students and school locale. The data is from 2020-2021.
+Our topic is in the field of education. We looked at characteristics of public schools in the state of Maryland and created a dashboard to serve as a resource for families moving to or within the state. The product is meant to allow users to easily visualize the locations and size of schools. Using data from the Department of Education, we looked at factors such as school locale (city, suburb, etc.), school city, student to teacher ratio and total students. The data is from the period 2020 to 2021.
 
 Link to data: https://catalog.data.gov/dataset/public-school-characteristics-2020-21
 
 GeoJSON data link: https://data-nces.opendata.arcgis.com/datasets/nces::public-school-characteristics-2020-21.geojson?outSR=%7B%22latestWkid%22%3A4326%2C%22wkid%22%3A4326%7D
 
 Summary Approach:
-+ Reduced source table so the file is small enough to upload - Maryland_Public_High_2020-2021_Cleaned.csv 
-+ Created sql database - public_school_db.sql 
-+ Created Flask API - app.py and config.py 
-+ Created html file for dashboard - index.html
-+ Created js filea for dashboard: 
-  - Interactive map using Leaflet - map_1.js
-  - Summary pie chart - app2.js
-  - Interactive bar charts - jonathan.js and app3.js
++ Reduced source table so the file is small enough to upload -- Maryland_Public_High_2020-2021_Cleaned.csv 
++ Created sql database -- public_school_db.sql 
++ Created Flask API -- app.py and config.py 
++ Created html file for dashboard -- index.html
++ Created js files for dashboard: 
+  - Interactive map using Leaflet -- map_1.js
+  - Summary pie chart -- app2.js
+  - Summary bar chart -- bar.js
+  - Interactive bar charts -- app3.js
 
-Info about Leaflet Map element (map_1.js) 
+Info about Leaflet Map element 
   + Base layer of openstreetmap.
   + Overlay Map of all Public High Schools in Maryland
   + Binded Popup with school's name, address, total number of enroled students and student/teacher ratio

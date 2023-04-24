@@ -19,7 +19,7 @@ function createMap(schools) {
     // Create the map object with options.
     var map = L.map("bubble", {
       center: [38.83487, -76.31982],
-      zoom: 6,
+      zoom: 7,
       layers: [streetmap, schools]
     });
   
@@ -43,9 +43,9 @@ function createMap(schools) {
   
       // For each school, create a marker, and bind a popup with the school's name.
       var schoolMarker = L.marker([High_school.latcod, High_school.loncod])
-        .bindPopup("<h3>" + High_school.sch_name + "<h3><h3>Address: " + 
-          High_school.lstreet1 + "," + High_school.lcity + 
-          "</h3><p> Total enroled students: " + High_school.total + "</p>");
+        .bindPopup("<h3>" + High_school.sch_name + "<h3><h2>Address: " + 
+          High_school.lstreet1 + ", " + High_school.lcity + 
+          "</h2><p> Total enroled students: " + High_school.total + "</p>");
   
       // Add the marker to the school marker array.
       schoolMarkers.push(schoolMarker);

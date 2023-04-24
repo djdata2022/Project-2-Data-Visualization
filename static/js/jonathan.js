@@ -63,8 +63,8 @@ d3.json(url).then(function(data) {
         let localeData = CL;
         // Sort CL by total students ascending.
         let sortedLocale = localeData.sort((a, b) => a.total - b.total);
-        // Slice the first 5 objects for plotting
-        let slicedLocale = sortedLocale.slice(0,5);
+        // Slice the first 10 objects for plotting
+        let slicedLocale = sortedLocale.slice(0,10);
         slicedLocale.reverse();
 
         let trace1 = {
@@ -78,7 +78,7 @@ d3.json(url).then(function(data) {
         let traceLocale = [trace1];
 
         let layout = {
-            title: "Schools by Total Students",
+            title: "High Schools with Lowest Numbers of Students",
             width: 600,
             height: 400,
             margin: {
@@ -90,6 +90,7 @@ d3.json(url).then(function(data) {
             }
         
         Plotly.newPlot("jonathan", traceLocale, layout);
+
     };
 
     d3.select("#selDataset").on("change", updatePlotly);
@@ -106,8 +107,8 @@ d3.json(url).then(function(data) {
             localeData = CL;
             // Sort CL by total students ascending.
             let sortedLocale = localeData.sort((a, b) => a.total - b.total);
-            // Slice the first 5 objects for plotting
-            let slicedLocale = sortedLocale.slice(0,5);
+            // Slice the first 10 objects for plotting
+            let slicedLocale = sortedLocale.slice(0,10);
             slicedLocale.reverse();
 
             x = slicedLocale.map(school => school.total);
@@ -119,8 +120,8 @@ d3.json(url).then(function(data) {
             localeData = CS;
             // Sort CS by total students ascending.
             let sortedLocale = localeData.sort((a, b) => a.total - b.total);
-            // Slice the first 5 objects for plotting
-            let slicedLocale = sortedLocale.slice(0,5);
+            // Slice the first 10 objects for plotting
+            let slicedLocale = sortedLocale.slice(0,10);
             slicedLocale.reverse();
 
             x = slicedLocale.map(school => school.total);
@@ -132,8 +133,8 @@ d3.json(url).then(function(data) {
             localeData = SL;
             // Sort SL by total students ascending.
             let sortedLocale = localeData.sort((a, b) => a.total - b.total);
-            // Slice the first 5 objects for plotting
-            let slicedLocale = sortedLocale.slice(0,5);
+            // Slice the first 10 objects for plotting
+            let slicedLocale = sortedLocale.slice(0,10);
             slicedLocale.reverse();
 
             x = slicedLocale.map(school => school.total);
@@ -145,8 +146,8 @@ d3.json(url).then(function(data) {
             localeData = SM;
             // Sort SM by total students ascending.
             let sortedLocale = localeData.sort((a, b) => a.total - b.total);
-            // Slice the first 5 objects for plotting
-            let slicedLocale = sortedLocale.slice(0,5);
+            // Slice the first 10 objects for plotting
+            let slicedLocale = sortedLocale.slice(0,10);
             slicedLocale.reverse();
 
             x = slicedLocale.map(school => school.total);
@@ -158,8 +159,8 @@ d3.json(url).then(function(data) {
             localeData = SS;
             // Sort SS by total students ascending.
             let sortedLocale = localeData.sort((a, b) => a.total - b.total);
-            // Slice the first 5 objects for plotting
-            let slicedLocale = sortedLocale.slice(0,5);
+            // Slice the first 10 objects for plotting
+            let slicedLocale = sortedLocale.slice(0,10);
             slicedLocale.reverse();
 
             x = slicedLocale.map(school => school.total);
@@ -171,8 +172,8 @@ d3.json(url).then(function(data) {
             localeData = TF;
             // Sort TF by total students ascending.
             let sortedLocale = localeData.sort((a, b) => a.total - b.total);
-            // Slice the first 5 objects for plotting
-            let slicedLocale = sortedLocale.slice(0,5);
+            // Slice the first 10 objects for plotting
+            let slicedLocale = sortedLocale.slice(0,10);
             slicedLocale.reverse();
 
             x = slicedLocale.map(school => school.total);
@@ -184,8 +185,8 @@ d3.json(url).then(function(data) {
             localeData = TD;
             // Sort CL by total students ascending.
             let sortedLocale = localeData.sort((a, b) => a.total - b.total);
-            // Slice the first 5 objects for plotting
-            let slicedLocale = sortedLocale.slice(0,5);
+            // Slice the first 10 objects for plotting
+            let slicedLocale = sortedLocale.slice(0,10);
             slicedLocale.reverse();
 
             x = slicedLocale.map(school => school.total);
@@ -197,8 +198,8 @@ d3.json(url).then(function(data) {
             localeData = RF;
             // Sort RF by total students ascending.
             let sortedLocale = localeData.sort((a, b) => a.total - b.total);
-            // Slice the first 5 objects for plotting
-            let slicedLocale = sortedLocale.slice(0,5);
+            // Slice the first 10 objects for plotting
+            let slicedLocale = sortedLocale.slice(0,10);
             slicedLocale.reverse();
 
             x = slicedLocale.map(school => school.total);
@@ -210,8 +211,8 @@ d3.json(url).then(function(data) {
             localeData = TD;
             // Sort TD by total students ascending.
             let sortedLocale = localeData.sort((a, b) => a.total - b.total);
-            // Slice the first 5 objects for plotting
-            let slicedLocale = sortedLocale.slice(0,5);
+            // Slice the first 10 objects for plotting
+            let slicedLocale = sortedLocale.slice(0,10);
             slicedLocale.reverse();
 
             x = slicedLocale.map(school => school.total);

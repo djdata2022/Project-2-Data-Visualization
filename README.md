@@ -2,6 +2,7 @@
 Group Project - April 2023
 
 A Brief articulation of chosen topic and rationale:
+
 Our topic is in the field of education. We will look at characteristics of public schools in the 
 United States and create a dashboard to serve as a resource for families moving to or 
 within the US. The product will allow users to easily visualize the locations, types, and 
